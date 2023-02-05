@@ -178,7 +178,7 @@ Stellarium will be built without QtWebEngine support. The result is shown in the
 
   ```
 
-- Install latest Qt 5:
+- Install latest Qt 5 (Or Qt 6 for Stellarium 1.0+):
   ```
   $ brew install qt@5
   ```
@@ -192,12 +192,23 @@ Stellarium will be built without QtWebEngine support. The result is shown in the
   export PATH=/opt/homebrew/opt/qt@5/bin:$PATH
   ```
 
-You may using the distribution from the Qt Company to install the [latest stable version](https://www.qt.io/download-qt-installer)
-of Qt. In this case adding Qt to your PATH environment variable will to adding to your `~/.bash_profile` (Bash) or `~/.zprofile` (Zsh)
-file the following line (for example we installed Qt 5.12.12):
+You may use the distribution from the Qt Company to install the [latest stable version](https://www.qt.io/download-qt-installer)
+of Qt. In this case add Qt to your PATH environment variable by adding the following line to your `~/.bash_profile` (Bash) or `~/.zprofile` (Zsh) (for example we installed Qt 5.12.12):
 ```
 export PATH=~/Qt/5.12/clang_64/bin:$PATH
 ```
+If you go this route, make sure to include the following components during the installation process: 
+
+- Svg
+- XmlPatterns
+- SerialPort (required for telescope control and GPS, see CMake parameters)
+- DBus
+- QMl
+- Multimedia
+- MultimediaWidgets
+- Positioning (Required for GPS)
+- OpenGL
+- Test
 
 #### MacOS without QtWebEngine
 
